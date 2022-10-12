@@ -1,0 +1,11 @@
+set_global_assignment -name DEVICE EP4CE10E22C8
+set_global_assignment -name SYSTEMVERILOG_FILE /opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v -library work
+set_global_assignment -name SYSTEMVERILOG_FILE /home/ferney/Escritorio/SoC_project/build/c4e6e10/gateware/c4e6e10.v -library work
+set_global_assignment -name top_level_entity c4e6e10
+set_location_assignment -comment "serial:0.tx" -to serial_tx Pin_113
+set_instance_assignment -name io_standard -comment "serial:0.tx" "3.3-V LVTTL" -to serial_tx
+set_location_assignment -comment "serial:0.rx" -to serial_rx Pin_114
+set_instance_assignment -name io_standard -comment "serial:0.rx" "3.3-V LVTTL" -to serial_rx
+set_location_assignment -comment "clk:0" -to clk Pin_23
+set_instance_assignment -name io_standard -comment "clk:0" "3.3-V LVTTL" -to clk
+set_global_assignment -name SDC_FILE c4e6e10.sdc

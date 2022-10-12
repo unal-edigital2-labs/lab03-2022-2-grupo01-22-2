@@ -1,0 +1,33 @@
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+-----------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2020.1 (lin64) Build 2902540 Wed May 27 19:54:35 MDT 2020
+| Date         : Mon Nov 23 22:41:26 2020
+| Host         : ferney-pc running 64-bit Ubuntu 20.04.1 LTS
+| Command      : report_utilization -hierarchical -file nexys4ddr_utilization_hierarchical_place.rpt
+| Design       : nexys4ddr
+| Device       : 7a100tcsg324-1
+| Design State : Fully Placed
+-----------------------------------------------------------------------------------------------------
+
+Utilization Design Information
+
+Table of Contents
+-----------------
+1. Utilization by Hierarchy
+
+1. Utilization by Hierarchy
+---------------------------
+
++----------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+|    Instance    |       Module      | Total LUTs | Logic LUTs | LUTRAMs | SRLs |  FFs | RAMB36 | RAMB18 | DSP Blocks |
++----------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+| nexys4ddr      |             (top) |       3313 |       3209 |     104 |    0 | 2598 |    134 |      0 |          1 |
+|   (nexys4ddr)  |             (top) |        929 |        913 |      16 |    0 | 1469 |    134 |      0 |          1 |
+|   picorv32     |          picorv32 |       2385 |       2297 |      88 |    0 | 1129 |      0 |      0 |          0 |
+|     (picorv32) |          picorv32 |       1697 |       1609 |      88 |    0 |  674 |      0 |      0 |          0 |
+|     pcpi_div   | picorv32_pcpi_div |        444 |        444 |       0 |    0 |  200 |      0 |      0 |          0 |
+|     pcpi_mul   | picorv32_pcpi_mul |        244 |        244 |       0 |    0 |  255 |      0 |      0 |          0 |
++----------------+-------------------+------------+------------+---------+------+------+--------+--------+------------+
+* Note: The sum of lower-level cells may be larger than their parent cells total, due to cross-hierarchy LUT combining
+
+

@@ -1,0 +1,111 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:35 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Nov 23 21:30:08 2020
+# Process ID: 47295
+# Current directory: /home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware
+# Command line: vivado -mode batch -source nexys4ddr.tcl
+# Log file: /home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/vivado.log
+# Journal file: /home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/vivado.jou
+#-----------------------------------------------------------
+source nexys4ddr.tcl
+# create_project -force -name nexys4ddr -part xc7a100t-CSG324-1
+# set_msg_config -id {Common 17-55} -new_severity {Warning}
+# read_verilog {/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v}
+# read_verilog {/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v}
+# read_xdc nexys4ddr.xdc
+# set_property PROCESSING_ORDER EARLY [get_files nexys4ddr.xdc]
+# synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Command: synth_design -directive default -top nexys4ddr -part xc7a100t-CSG324-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 47372
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2089.113 ; gain = 0.000 ; free physical = 745 ; free virtual = 6114
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'nexys4ddr' [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:4]
+INFO: [Synth 8-3876] $readmem data file 'mem.init' is read successfully [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2240]
+INFO: [Synth 8-3876] $readmem data file 'mem_1.init' is read successfully [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2260]
+INFO: [Synth 8-3876] $readmem data file 'mem_2.init' is read successfully [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2280]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1741]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1749]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1832]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1900]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1968]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:1980]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2070]
+INFO: [Synth 8-6157] synthesizing module 'picorv32' [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:62]
+	Parameter ENABLE_COUNTERS bound to: 1'b1 
+	Parameter ENABLE_COUNTERS64 bound to: 1'b1 
+	Parameter ENABLE_REGS_16_31 bound to: 1'b1 
+	Parameter ENABLE_REGS_DUALPORT bound to: 1'b1 
+	Parameter LATCHED_MEM_RDATA bound to: 1'b0 
+	Parameter TWO_STAGE_SHIFT bound to: 1'b1 
+	Parameter BARREL_SHIFTER bound to: 1'b0 
+	Parameter TWO_CYCLE_COMPARE bound to: 1'b0 
+	Parameter TWO_CYCLE_ALU bound to: 1'b0 
+	Parameter COMPRESSED_ISA bound to: 1'b0 
+	Parameter CATCH_MISALIGN bound to: 1'b1 
+	Parameter CATCH_ILLINSN bound to: 1'b1 
+	Parameter ENABLE_PCPI bound to: 1'b0 
+	Parameter ENABLE_MUL bound to: 1'b1 
+	Parameter ENABLE_FAST_MUL bound to: 1'b0 
+	Parameter ENABLE_DIV bound to: 1'b1 
+	Parameter ENABLE_IRQ bound to: 1'b1 
+	Parameter ENABLE_IRQ_QREGS bound to: 1'b1 
+	Parameter ENABLE_IRQ_TIMER bound to: 1'b1 
+	Parameter ENABLE_TRACE bound to: 1'b0 
+	Parameter REGS_INIT_ZERO bound to: 1'b0 
+	Parameter MASKED_IRQ bound to: 0 - type: integer 
+	Parameter LATCHED_IRQ bound to: -1 - type: integer 
+	Parameter PROGADDR_RESET bound to: 0 - type: integer 
+	Parameter PROGADDR_IRQ bound to: 16 - type: integer 
+	Parameter STACKADDR bound to: -1 - type: integer 
+	Parameter irq_timer bound to: 0 - type: integer 
+	Parameter irq_ebreak bound to: 1 - type: integer 
+	Parameter irq_buserror bound to: 2 - type: integer 
+	Parameter irqregs_offset bound to: 32 - type: integer 
+	Parameter regfile_size bound to: 36 - type: integer 
+	Parameter regindex_bits bound to: 6 - type: integer 
+	Parameter WITH_PCPI bound to: 1'b1 
+	Parameter TRACE_BRANCH bound to: 36'b000100000000000000000000000000000000 
+	Parameter TRACE_ADDR bound to: 36'b001000000000000000000000000000000000 
+	Parameter TRACE_IRQ bound to: 36'b100000000000000000000000000000000000 
+	Parameter cpu_state_trap bound to: 8'b10000000 
+	Parameter cpu_state_fetch bound to: 8'b01000000 
+	Parameter cpu_state_ld_rs1 bound to: 8'b00100000 
+	Parameter cpu_state_ld_rs2 bound to: 8'b00010000 
+	Parameter cpu_state_exec bound to: 8'b00001000 
+	Parameter cpu_state_shift bound to: 8'b00000100 
+	Parameter cpu_state_stmem bound to: 8'b00000010 
+	Parameter cpu_state_ldmem bound to: 8'b00000001 
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_mul' [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2192]
+	Parameter STEPS_AT_ONCE bound to: 1 - type: integer 
+	Parameter CARRY_CHAIN bound to: 4 - type: integer 
+INFO: [Synth 8-155] case statement is not full and has no default [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2223]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_mul' (1#1) [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2192]
+INFO: [Synth 8-6157] synthesizing module 'picorv32_pcpi_div' [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2415]
+INFO: [Synth 8-155] case statement is not full and has no default [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2440]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32_pcpi_div' (2#1) [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:2415]
+INFO: [Synth 8-155] case statement is not full and has no default [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:332]
+WARNING: [Synth 8-151] case item 1'b0 is unreachable [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1264]
+INFO: [Synth 8-155] case statement is not full and has no default [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1310]
+INFO: [Synth 8-155] case statement is not full and has no default [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:1493]
+INFO: [Synth 8-6155] done synthesizing module 'picorv32' (3#1) [/opt/litex/pythondata-cpu-picorv32/pythondata_cpu_picorv32/verilog/picorv32.v:62]
+WARNING: [Synth 8-7071] port 'trace_valid' of module 'picorv32' is unconnected for instance 'picorv32' [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2357]
+WARNING: [Synth 8-7071] port 'trace_data' of module 'picorv32' is unconnected for instance 'picorv32' [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2357]
+WARNING: [Synth 8-7023] instance 'picorv32' of module 'picorv32' has 27 connections declared, but only 25 given [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:2357]
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Common 17-41] Interrupt caught. Command should exit soon.
+INFO: [Synth 8-6155] done synthesizing module 'nexys4ddr' (4#1) [/home/ferney/Escritorio/SoC_project/build/nexys4ddr/gateware/nexys4ddr.v:4]
+1
+INFO: [Common 17-83] Releasing license: Synthesis
+31 Infos, 4 Warnings, 0 Critical Warnings and 1 Errors encountered.
+synth_design failed
+INFO: [Common 17-344] 'source' was cancelled
+INFO: [Common 17-206] Exiting Vivado at Mon Nov 23 21:30:33 2020...
