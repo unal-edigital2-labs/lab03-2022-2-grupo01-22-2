@@ -1,3 +1,9 @@
+## Integrantes
+- Juan Esteban Ochoa Carrillo
+- Sara Sofia Ospina Rojas
+- Andres Felipe Beltrán Vanegas
+
+
 Una vez se tenga claro qué periféricos debe tener el proyecto, realizar:
 Descripción de cada periférico, definir las interconexión de entradas y salidas. (caja negra)
 Describir de forma general el funcionamiento de cada bloque en HW y describir en pseudocódigo la interconexión con el SW.
@@ -12,14 +18,14 @@ La tasa de inseguridad en la ciudad de Bogotá ha estado en aumento en los últi
 En el mapa de memoria se puede encontrar la organización inicial de los registros que se planean usar para el funcionamiento del dispositivo 
 
 <p align="center">
-<img src="mapmem.png" width="300">
+<img src="https://github.com/unal-edigital2-labs/lab03-2022-2-grupo01-22-2/blob/main/images/mapmem.png" width="300">
 </p>
 
 ## SoC
 Se pensó en los periféricos necesarios para el proyecto en este caso inicialmente la cámara, servomotores y uno o dos uarts, uno que permita la comunicación con la cámara y otro la comunicación con el computador en caso de que se requiera procesar la imagen fuera de la FPGA.
 
 <p align="center">
-<img src="Diagrama.png" width="300">
+<img src="https://github.com/unal-edigital2-labs/lab03-2022-2-grupo01-22-2/blob/main/images/Diagrama.png" width="300">
 </p>
 
 Para la implementación adicional a los periféricos ya implementados como los botones o los switches, se agregaron principalmente: PWM, por medio de la función que Litex ya tiene incluida, una uart adicional para realizar la lectura de datos desde el módulo de arduino que, principalmente recibe los información de la cámara por medio de protocolo I2C que el arduino recibe para poder transmitirlos a la FPGA por medio de la uart
@@ -110,7 +116,7 @@ Se planea enviar estas coordenadas por medio de un serial a la FPGA pero por tie
 Al necesitar una cámara que tenga libertad en dos ejes, se decidió investigar, encontrando el siguiente diseño en el cual nos basamos 
 
 <p align="center">
-<img src="Diseño_invest.jpeg" width="300">
+<img src="https://github.com/unal-edigital2-labs/lab03-2022-2-grupo01-22-2/blob/main/images/Dise%C3%B1o_invest.jpeg" width="300">
 </p>
 
 Para diseñar la estructura del dispositivo se usó un programa de modelado 3d open source llamado FreeCad, obteniendo 4 piezas
@@ -122,7 +128,7 @@ Para diseñar la estructura del dispositivo se usó un programa de modelado 3d o
 -  Por último se diseñó `modelo3d/Eje_cam.FCStd` y `modelo3d/Eje_cam2.FCStd` siendo los que permiten el segundo movimiento de la cámara.
 
 <p align="center">
-<img src="mod3d.png" width="300">
+<img src="https://github.com/unal-edigital2-labs/lab03-2022-2-grupo01-22-2/blob/main/images/mod3d.png" width="300">
 </p>
 
 
