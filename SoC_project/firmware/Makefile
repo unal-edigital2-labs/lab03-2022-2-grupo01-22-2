@@ -1,32 +1,34 @@
-BUILD_DIR=../build/nexys4ddr
+BUILD_DIR=../build/
 
 include $(BUILD_DIR)/software/include/generated/variables.mak
 include $(SOC_DIRECTORY)/software/common.mak
 
-OBJECTS=isr.o delay.o display.o main.o
+OBJECTS= crt0.o main.o delay.o  isr.o
 
 all: firmware.bin
-
+	
 # pull in dependency info for *existing* .o files
 -include $(OBJECTS:.o=.d)
 
 %.bin: %.elf
 	$(OBJCOPY) -O binary $< $@
 	chmod -x $@
-
 firmware.elf: $(OBJECTS)
-	$(LD) $(LDFLAGS) \
+	$(CC) $(LDFLAGS) \
 		-T linker.ld \
 		-N -o $@ \
-		$(BUILD_DIR)/software/libbase/crt0.o \
 		$(OBJECTS) \
-		-L$(BUILD_DIR)/software/libbase \
-		-L$(BUILD_DIR)/software/libcompiler_rt \
-		-lbase-nofloat -lcompiler_rt
+		$(PACKAGES:%=-L$(BUILD_DIR)/software/%) \
+		$(LIBS:lib%=-l%)
 	chmod -x $@
+
+		
 
 main.o: main.c
 	$(compile)
+
+crt0.o: $(CPU_DIRECTORY)/crt0.S
+	$(assemble)
 
 %.o: %.c
 	$(compile)
@@ -35,6 +37,6 @@ main.o: main.c
 	$(assemble)
 
 clean:
-	$(RM) $(OBJECTS) $(OBJECTS:.o=.d) .*~ *~
+	$(RM) $(OBJECTS) $(OBJECTS:.o=.d) firmware.elf firmware.bin .*~ *~
 
 .PHONY: all main.o clean load

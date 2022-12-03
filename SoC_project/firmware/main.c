@@ -8,7 +8,9 @@
 #include <generated/csr.h>
 
 #include "delay.h"
-#include "display.h"
+//#include "display.h"
+//#include "camara.h"
+#include "uart1.h"
 
 static char *readstr(void)
 {
@@ -78,13 +80,15 @@ static void help(void)
 	puts("display                         - display test");
 	puts("rgbled                          - rgb led test");
 	puts("vga                             - vga test");
+	puts("camara                             - camara test");
+	puts("uart1                             - uart1 test");
 }
 
 static void reboot(void)
 {
 	ctrl_reset_write(1);
 }
-
+/*
 static void display_test(void)
 {
 	int i;
@@ -112,7 +116,9 @@ static void display_test(void)
 		}
 		delay_ms(500);
 	}
+
 }
+*/
 
 static void led_test(void)
 {
@@ -200,6 +206,36 @@ static void vga_test(void)
 			vga_cntrl_mem_we_write(1);
 		}
 	}
+
+}
+/*
+static void camara_test(void)
+{
+	unsigned short temp2 =0xFF;
+	printf("Test del los camara... se interrumpe con el botton 1\n");
+	while(!(buttons_in_read()&1)) {
+		unsigned short temp = camara_cntrl_mem_px_data_read();
+		if (temp2 != temp){
+			printf("lso datos de la camara es : %i\n", temp);
+			printf("el boton de la camara esta en: %i\n",camara_cntrl_done_read());
+			temp2 = temp;
+		}
+	}
+
+}
+*/
+static void uart1_test(void)
+{
+	printf("Test de la uart 1, debe poner en corto el pon RX Tx de la la UART1.\n");
+	
+	printf("se envia el caracter A por la uart 1  y al estar en loopback se recibe el caracter  y se retrasmite por la uart 0\n");
+	printf("se interrumpe con el botton 1\n");
+	
+	while(!(buttons_in_read()&1)) {
+		uart1_write('H');
+		delay_ms(50);
+		uart_write(uart1_read());
+		}
 }
 
 static void console_service(void)
@@ -218,12 +254,18 @@ static void console_service(void)
 		led_test();
 	else if(strcmp(token, "switch") == 0)
 		switch_test();
-	else if(strcmp(token, "display") == 0)
-		display_test();
+	//else if(strcmp(token, "display") == 0)
+	//	display_test();
 	else if(strcmp(token, "rgbled") == 0)
 		rgbled_test();
 	else if(strcmp(token, "vga") == 0)
 		vga_test();
+	//
+	//else if(strcmp(token, "camara") == 0)
+	//	camara_test();
+	else if(strcmp(token, "uart1") == 0)
+		uart1_test();
+
 	prompt();
 }
 
@@ -232,12 +274,17 @@ int main(void)
 	irq_setmask(0);
 	irq_setie(1);
 	uart_init();
+	//camara_test();
+	/*Se adiciona un serial mas */
+	uart1_init();
 
-	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software built "__DATE__" "__TIME__"\n");
+
+	puts("\nSoC - RiscV project UNAL 2020-2-- CPU testing software  uart add "__DATE__" "__TIME__"\n");
 	help();
 	prompt();
 
 	while(1) {
+	//	uart1_test();
 		console_service();
 	}
 

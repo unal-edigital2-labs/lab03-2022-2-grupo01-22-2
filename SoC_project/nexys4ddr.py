@@ -89,6 +89,10 @@ _io = [
     ("hsync", 0, Pins("B11"), IOStandard("LVCMOS33")),
     ("vsync", 0, Pins("B12"), IOStandard("LVCMOS33")),
     
+
+     # Servomotor
+     ("pwm__", 1, Pins("E6"), IOStandard("LVCMOS33")),
+  
     ("cpu_reset", 0, Pins("C12"), IOStandard("LVCMOS33")),
     
     ("clk", 0, Pins("E3"), IOStandard("LVCMOS33")),
