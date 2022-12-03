@@ -134,7 +134,10 @@ Para diseñar la estructura del dispositivo se usó un programa de modelado 3d o
 
 
 
-
 ### Hardware 
 
-A nivel de Hardware se realizó la implementación por Litex, sin embargo nunca llegó a correrse. Se cree que se debe a errores dentro del Software de cada uno de los periféricos  
+A nivel de Hardware se realizo la implementación por Litex, sin embargo nunca llego a correrse. Se cree que se debe a errores dentro del Software de cada uno de los periféricos, por lo que se deve correr el archivo inicial de ejemplo, e ir probando con cada uno de los perifericos implementados para ver donde esta el error. Por lo que no logra a entrar a memoria y ejecutar desde el procesador. 
+
+Desde la seccion del `SoC_project` podemos encontrar diferentes apartados como `_pycache_` que son todos los archivos que se generan en la memoria cache cuando ejecuto mis archivos .py de Python. El `firmware` que se encarga de compilar mis archivos .bin, los cuales se cargan para ejecutar en lenguaje maquina. 
+
+El `buildSoCproject.py` es un script de Python donde se contrunste todo el Soc antes de ser procesado por Linux. Dentro de este encontramos todos los modulos como la UART o el PWM. Litex utiliza este para escribir en nustro procesador. Adicional a esto dentro de `nexys4addr.py` encontramos los pines o contrains que utiliza nuestra FPGA para cada una de las señales. 
